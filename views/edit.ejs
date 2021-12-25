@@ -1,0 +1,21 @@
+<%- include('partials/header') -%>
+
+<div class="container mt-5 w-50">
+
+    <h2 class="mb-4">Update Donor Details</h2>
+
+    <form action="/edit/<%= Doners.id %>?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        
+        <input type="text" value="<%= Doners.name %>" name="name" class="form-control" placeholder="Doners Name">
+
+        <input type="text" value="<%= Doners.bloodGroup %>" name="designation" class="form-control" placeholder="Doner blood group">
+
+        <input type="text" value="<%= Doners.mobilenumber %>" name="salary" class="form-control" placeholder="Mobile Number">
+
+        <button type="submit" class="btn btn-danger btn-block mt-3">Update Donor</button>
+
+    </form>
+</div>
+
+<%- include('partials/footer') -%>

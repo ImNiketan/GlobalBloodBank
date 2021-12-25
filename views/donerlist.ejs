@@ -1,0 +1,38 @@
+<%- include('partials/header') -%>
+
+<div class="container mt-5">
+    <h2 style="text-align: center; font-weight: bold;color: crimson;">Our Respected Doners</h2>
+
+</div>
+
+    <div class="container mt-5">
+
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Blood Group</th>
+                    <th>Mobile Number</th>
+                    <!-- <th>Operations</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <% Doners.forEach((D)=> { %>
+                    <tr>
+                        <td>
+                            <%= D.name %>
+                        </td>
+                        <td>
+                            <%= D.bloodGroup %>
+                        </td>
+                        <td>+
+                            <%= D.mobilenumber %>
+                        </td>
+                    </tr>
+                    <% }) %>
+
+
+            </tbody>
+        </table>
+    </div>
+    <%- include('partials/footer') -%>

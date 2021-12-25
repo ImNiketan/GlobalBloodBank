@@ -1,0 +1,48 @@
+<%- include('partials/header') -%>
+
+    <div class="container mt-5 w-50">
+
+        <h2 class="mb-4">Search Donors</h2>
+
+        <form action="/search" method="GET">
+            <input type="text" name="name" class="form-control" placeholder="blood group">
+
+            <button type="submit" class="btn btn-danger btn-block mt-3">Search</button>
+
+        </form>
+
+        <% if(Doners) { %>
+            <h4 class="text-danger my-4">Search Results: </h4>
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Blood Group</th>
+                        <th>Mobile Number</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <%= Doners.name %>
+                        </td>
+                        <td>
+                            <%= Doners.bloodGroup %>
+                        </td>
+                        <td>+
+                            <%= Doners.mobilenumber %>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <% } else if(Doners != ''){ %>
+
+                <div class="alert alert-danger mt-4">Donor does not exist with this name.</div>
+
+                <% } %>
+
+    </div>
+
+    <%- include('partials/footer') -%>
