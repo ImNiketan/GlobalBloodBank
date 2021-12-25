@@ -18,14 +18,6 @@ const userRoutes = require('./routes/users');
 dotenv.config({ path: './config.env' });
 
 
-// const { MongoClient } = require('mongodb');
-// const uri = "mongodb+srv://niketan:niketan@cluster0.0ctvy.mongodb.net/doners?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-// client.connect(err => {
-//   const collection = client.db("doners").collection("doners");
-//   // perform actions on the collection object
-//   client.close();
-// });
 
 mongoose.connect(process.env.DATABASE_LOCAL, {
     useNewUrlParser: true,
